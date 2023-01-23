@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:/home/zecasouza/test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    platform: h2
+    jpa:
+      show-sql: false
+      properties:
+        hibernate:
+          show_sql: false
+          dll-auto: validate
+        generate-ddl: false
+    liquibase:
+      changeLog: classpath:db/changelog/db.changelog-master.yaml
+    h2:
+      console:
+        enabled: true

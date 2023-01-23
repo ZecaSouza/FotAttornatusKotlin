@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002 add_cep_to_endereco
+      author: zeca
+      changes:
+        - addColumn:
+            tableName: endereco
+            columns:
+              - column:
+                  name: cep
+                  type: int

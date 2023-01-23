@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002 endereco
+      author: zeca
+      changes:
+        - createTable:
+            tableName: endereco
+            columns:
+              - column:
+                  name: endereco_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: pessoa_id
+                  type: bigint
+              - column:
+                  name: rua
+                  type: varchar(255)
+              - column:
+                  name: cidade
+                  type: varchar(255)
+              - column:
+                  name: estado
+                  type: varchar(255)
+        - addForeignKeyConstraint:
+            baseTableName: endereco
+            baseColumnNames: pessoa_id
+            referencedTableName: pessoa
+            referencedColumnNames: pessoa_id
+            constraintName: fk_endereco_pessoa
+            onDelete: CASCADE
