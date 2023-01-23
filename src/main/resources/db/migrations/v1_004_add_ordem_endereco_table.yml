@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004 add_ordem_to_endereco
+      author: zeca
+      changes:
+        - addColumn:
+            tableName: endereco
+            columns:
+              - column:
+                  name: ordem
+                  type: VARCHAR (50)

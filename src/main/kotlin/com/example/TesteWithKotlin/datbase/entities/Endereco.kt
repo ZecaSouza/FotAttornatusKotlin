@@ -1,6 +1,7 @@
 package com.example.TesteWithKotlin.datbase.entities
 
 import com.example.TesteWithKotlin.models.dtos.EnderecoDTO
+import com.example.TesteWithKotlin.models.enums.OrdemEnum
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
 import javax.persistence.*
 
@@ -21,6 +22,10 @@ open class Endereco(
 
     @Column(name = "estado")
     open var estado: String = String(),
+
+    @Column(name = "ordem")
+    @Enumerated(EnumType.STRING)
+    open var ordem: OrdemEnum = OrdemEnum.PRINCIPAL,
 
     @Column(name = "cep")
     open var cep: Long = 0,
